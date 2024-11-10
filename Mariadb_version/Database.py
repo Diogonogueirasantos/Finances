@@ -1,7 +1,8 @@
 import mysql.connector
 import getpass
 
-class Database_manager:
+
+class Database_manager():
     def __init__(self):
         self.Database_conection()
 
@@ -12,9 +13,18 @@ class Database_manager:
                                                 host='localhost', database='Clientes')
         self.cursor = self.conector.cursor()
         if self.conector.is_connected():
-            print("Cenexão estabelecida!")
+            print("Conexão estabelecida!")
+            self.login()
+        else:
+            print('Usuário não encontrado!')
 
 
+    def login(self):
+        nome = "Julia"
+        self.cursor.execute("select * from Users;")
+        print(self.cursor.fetchall())
+
+    def create_Account(self, N):
+        print(N)
 
 
-Instaciador = Database_manager()

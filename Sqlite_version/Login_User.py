@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QApplication, QLabel, QLineEdit, QCheckBox, QMessageBox, QPushButton, QWidget
 from PyQt6.QtGui import QIcon, QFont, QPixmap
 import sys
+import Database
 
 class login_User(QWidget):
     def __init__(self):
@@ -58,8 +59,38 @@ class Create_User(QWidget):
         self.setFixedSize(400, 400)
         self.setWindowTitle('Create User')
         self.setWindowIcon(QIcon('images/do-utilizador.png'))
+        self.create_UserSettings()
         self.show()
 
+    def create_UserSettings(self):
+        self.createuser_Label = QLabel('Name:', self)
+        self.createpassworduser_Label = QLabel('Password:', self)
+        self.confirmpassworduser_Label = QLabel('Confirm Password:', self)
+        self.createuser_Lineedit = QLineEdit(self)
+        self.createpassworduser_Lineedit = QLineEdit(self)
+        self.createpassworduser_Lineedit.setEchoMode(QLineEdit.EchoMode.Password)
+        self.confirmpassworduser_Lineedit = QLineEdit(self)
+        self.confirmpassworduser_Lineedit.setEchoMode(QLineEdit.EchoMode.Password)
+        self.password_Hidden = QCheckBox('Show Password',self)
+        self.createAccount_Botton = QPushButton('Create', self)
+        self.createuser_Label.move(80, 100)
+        self.createuser_Lineedit.move(129, 97)
+        self.createpassworduser_Label.move(57, 138)
+        self.createpassworduser_Lineedit.move(129, 133)
+        self.confirmpassworduser_Label.move(0, 175)
+        self.confirmpassworduser_Lineedit.move(129, 170)
+        self.password_Hidden.move(50, 200)
+        self.createAccount_Botton.move(155, 260)
+        self.password_Hidden.toggled.connect(self.hidden_Password)
+
+
+    def hidden_Password(self, cliked):
+        if cliked:
+            self.createpassworduser_Lineedit.setEchoMode(QLineEdit.EchoMode.Normal)
+            self.confirmpassworduser_Lineedit.setEchoMode(QLineEdit.EchoMode.Normal)
+        elif cliked == False:
+            self.createpassworduser_Lineedit.setEchoMode(QLineEdit.EchoMode.Password)
+            self.confirmpassworduser_Lineedit.setEchoMode(QLineEdit.EchoMode.Password)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
