@@ -1,2 +1,2 @@
 # Finances
-[gif_for_python_dev.gif](https://github.com/Diogonogueirasantos/Web/blob/main/images/gif_for_python_dev.gif)
+![Image](https://github.com/user-attachments/assets/dd6f03d2-a593-467e-bc79-5046cb5189e8)
