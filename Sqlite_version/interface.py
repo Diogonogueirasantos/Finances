@@ -7,11 +7,14 @@ import sys
 
 
 
-
 class Login(QWidget):
     def __init__(self):
         super().__init__()
         self.initializationUI()
+
+        with open('style.css', 'r') as load_file:
+            FormatationonPyqt6 = load_file.read()
+            self.setStyleSheet(FormatationonPyqt6)
 
 
     def initializationUI(self):
@@ -106,11 +109,6 @@ class New_User(QWidget):
         self.create_UserSettings()
         self.show()
 
-    def User_Informations(self):
-        self.database_Connection = QSqlDatabase.addDatabase('QSQLITE')
-        self.database_Connection.setDatabaseName('Users.db')
-        if self.database_Connection.open():
-            self.create_User()
 
     def create_UserSettings(self):
         self.user_Animation = QMovie('images/do-utilizador.gif')
@@ -136,19 +134,11 @@ class New_User(QWidget):
         self.confirm_Userpassword_Lineedit.setPlaceholderText('Confirm')
         self.createuser_Button = QPushButton('Create', self)
         self.createuser_Button.move(150, 250)
-        self.createuser_Button.clicked.connect(self.User_Informations)
+        self.createuser_Button.clicked.connect(self.create_User())
 
 
     def create_User(self):
-        self.sql_Cursor = QSqlQuery(self.database_Connection)
-        add_NewUser = "insert into (name, user_password) values(?, ?);"
-        self.sql_Cursor.prepare(add_NewUser)
-        self.sql_Cursor.bindValue(":name", self.createuser_Lineedit.text())
-        self.sql_Cursor.bindValue("user_Password", self.createpassword_Lineedit.text())
-        if self.sql_Cursor.exec():
-            if self.sql_Cursor.next():
-                self.database_Connection.commit()
-                QMessageBox.information(self, 'Usuário cadastrado', 'seja muito bem-vindo(a)!', QMessageBox.StandardButton.Ok)
+        print('Olá, mundo!')
 
 
 
@@ -165,7 +155,10 @@ class Main_Window(QWidget):
 if __name__ in "__main__":
     app = QApplication(sys.argv)
     program = Login()
+    app.styleSheet()
     app.exec()
+
+
 
 
 

@@ -1,4 +1,4 @@
-#!/home/dns/Finance/virtual_lib/bin/python3
+#!/home/rip/github/Finances/virtual_lib/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
