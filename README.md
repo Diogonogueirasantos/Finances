@@ -1,5 +1,5 @@
 # Finances
-*Status: Em desenvolvimento
+* Status: Em desenvolvimento
 ![Image](https://github.com/user-attachments/assets/dd6f03d2-a593-467e-bc79-5046cb5189e8)
 
 ## Um pouco sobre o projeto
@@ -9,6 +9,6 @@ A ideia por trás desse projeto veio da necessidade de aplicação de toda teori
 Certo, apesar de ter tido um contato breve com diversas linguagens a unica em que realmente me aprofundei foi Python, por ser uma linguagem de fácil aprendizado e grande versatibilidade decide focar somente nela para aplicação desse projeto.
 
 #### Bibliotecas utilizadas
-*Pyqt6
-*Sqlite3
-*Mariadb (possível aplicação)
+* Pyqt6
+* Sqlite3
+* Mariadb (possível aplicação)
