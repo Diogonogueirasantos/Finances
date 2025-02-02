@@ -4,7 +4,6 @@ from PyQt6.QtGui import QIcon, QMovie, QFont
 from PyQt6.QtCore import QSize
 import sys
 from novo_Usuario import New_User
-from database_Manager import users_Informations
 
 
 
@@ -13,10 +12,6 @@ class Login(QWidget):
         super().__init__()
         self.initializationUI()
 
-        with open('style.css', 'r') as load_file:
-            FormatationonPyqt6 = load_file.read()
-            self.setStyleSheet(FormatationonPyqt6)
-
 
     def initializationUI(self):
         self.setFixedSize(400, 400)
@@ -24,6 +19,14 @@ class Login(QWidget):
         self.login_Settings()
         self.create_Account_Settings()
         self.show()
+
+    def base_Informations(self):
+        self.database_Connection = QSqlDatabase.addDatabase('QSQLITE')
+        self.database_Connection.setDatabaseName('Users.db')
+        if self.database_Connection.open():
+            print('Conexão estabelecida!!')
+        else:
+            print(f'O banco de dados não foi encontrado ! {self.database_Connection.lastError().text()}')
 
     def login_Settings(self):
         self.user_Animation = QMovie('images/do-utilizador.gif')
@@ -61,8 +64,28 @@ class Login(QWidget):
 
 
     def search_User(self):
-        self.link_Database = users_Informations()
-        self.link_Database.search_record(self.user_Line.text(), self.password_Line.text())
+        self.sql_cursor = QSqlQuery(self.base_Informations())
+        sql_login_Query = "select name, user_Password from Users where name=? and user_Password=?;"
+        self.sql_cursor.prepare(sql_login_Query)
+        self.sql_cursor.bindValue(0, self.user_Line.text())
+        self.sql_cursor.bindValue(1, self.password_Line.text())
+        if self.sql_cursor.exec():
+            if self.sql_cursor.next():
+                QMessageBox.information(self, "Usuário encontrado!", f"seja bem-vindo(a) {self.user_Line.text()}",
+                                        QMessageBox.StandardButton.Ok)
+                self.linke = Main_Window()
+            else:
+                QMessageBox.question(self, "Usuário não encotrado!", """<p>Infelizmente não foi possíviel encontra o usuário!</p>
+                        <p>Deseja tentar novamente?</p>""",
+                                     QMessageBox.StandardButton.Yes | \
+                                     QMessageBox.StandardButton.No,
+                                     QMessageBox.StandardButton.Yes)
+        else:
+            QMessageBox.information(self, "o processo falhou!", "iInfelizmente parece que o processo falhou",
+                                    QMessageBox.StandardButton.Ok)
+
+
+
 
     def create_Account_Settings(self):
         self.create_User_Label = QLabel("Don't have a account?", self)
