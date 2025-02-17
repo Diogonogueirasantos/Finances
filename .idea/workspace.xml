@@ -7,9 +7,6 @@
     <list default="true" id="2c4d35fb-fd82-41d8-91ca-a532a33bd253" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sqlite_version/Users.db" beforeDir="false" afterPath="$PROJECT_DIR$/Sqlite_version/Users.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sqlite_version/database_Manager.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sqlite_version/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sqlite_version/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sqlite_version/novo_Usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sqlite_version/novo_Usuario.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,8 @@
   &quot;keyToString&quot;: {
     &quot;Python.database_Manager.executor&quot;: &quot;Run&quot;,
     &quot;Python.interface.executor&quot;: &quot;Run&quot;,
-    &quot;Python.novo_Usuario.executor&quot;: &quot;Run&quot;,
+    &quot;Python.novo_Usuario.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.teste_modulo_pyqtgraph.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -65,15 +63,5 @@
       <updated>1730720965159</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Sqlite_version/novo_Usuario.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
