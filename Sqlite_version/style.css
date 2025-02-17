@@ -1,5 +1,12 @@
-QpushButton {
+.settings_Buttons{
   background:#000;
   color:#fff;
-
+  padding: 5px;
+  border-radius: 7px;
 }
+
+.settings_Buttons:hover{
+  background: #7c7a7a;
+  color: #fff;
+}
+
