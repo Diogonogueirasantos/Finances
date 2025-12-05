@@ -1,4 +1,6 @@
 # Sobre o projeto
+![App_gif](https://github.com/Diogonogueirasantos/Finances/blob/main/recursos/gif_for_python_dev.gif)
+
 Bom a ideia por trás desse projeto surgiu pelo simples desejo de aplicar todo conhecimento que venho adquirindo sobre python e criações de interfaces gráficas, em um projeto real, apesar de ter a análise de dados como foco principal, não acho que seja de todo mal aprender sobre engenharia de software. Certo este projeto nada mais é que um programa de auxilio financeiro, sim, muito semelhante com as planilhas que costumamos usar para controlar nossas finanças, porém mais interativa (pelo menos é o que acredito ser). 
 
 Gostaria de fazer uma breve observação sobre como a interface está sendo criada, apesar de conhecer o Qt_tools e todo o seu poder para a criação de uma interface, optei por escrever todo o código usando o módulo PyQt6, sim, escolhi o caminho mais "Díficil", como está é minha primeira vez tendo contato com este tipo de conceito acredito que usar o Qt_tools não me permitiria aprender o conceito por trás do desenvolvimento de interfaces.
