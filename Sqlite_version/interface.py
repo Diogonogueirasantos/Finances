@@ -1,7 +1,8 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QCheckBox, QPushButton, QMessageBox, QMainWindow
+from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QCheckBox, QPushButton, QMessageBox, QMainWindow, QVBoxLayout, QHBoxLayout
 from PyQt6.QtSql import QSqlDatabase, QSqlQuery
 from PyQt6.QtGui import QAction
 from PyQt6.QtCore import QSize
+from PyQt6.QtCharts import QChart, QChartView, QPieSeries, QBarSeries, QBarSet
 import sys
 
 from novo_Usuario import New_User
@@ -17,11 +18,12 @@ class Login(QWidget):
         self.setFixedSize(400, 400)
         self.setWindowTitle('Login')
         self.login_Interface_Widgets()
-        self.login_interface_Widgets_Positions()
         self.longin_interface_Buttons()
         self.login_interface_Widgets_Settings()
         self.login_interface_CheckBox()
         self.create_Account_Settings()
+        self.settings_Enable_box_line()
+        self.layout_Widgets()
         self.show()
 
     def base_Informations(self):
@@ -33,36 +35,30 @@ class Login(QWidget):
             print(f'O banco de dados não foi encontrado ! {self.database_Connection.lastError().text()}')
 
     def login_Interface_Widgets(self):
-        self.user_Label = QLabel("User:", self)
+        self.user_Label = QLabel("Usuário:", self)
         self.user_Line = QLineEdit(self)
-        self.password_user_Label = QLabel("Password:", self)
+        self.password_user_Label = QLabel("Senha:", self)
         self.password_user_Line = QLineEdit(self)
 
-    def login_interface_Widgets_Positions(self):
-        self.user_Label.move(85, 110)
-        self.user_Line.move(130, 103)
-        self.password_user_Label.move(55, 150)
-        self.password_user_Line.move(133, 147)
-
     def login_interface_Widgets_Settings(self):
-        self.user_Line.setPlaceholderText("Email user")
-        self.password_user_Line.setPlaceholderText("User Password")
+        self.user_Line.setPlaceholderText("E-mail Do usuário")
+        self.password_user_Line.setPlaceholderText("Senha Do Usuário")
         self.user_Line.setClearButtonEnabled(True)
         self.password_user_Line.setClearButtonEnabled(True)
         self.user_Line.textEdited.connect(self.settings_Enable_box_line)
         self.password_user_Line.setEchoMode(QLineEdit.EchoMode.Password)
+        self.user_Line.setProperty('class', 'place_holder')
+        self.password_user_Line.setProperty('class', 'place_holder')
 
     def longin_interface_Buttons(self):
         self.login_Button = QPushButton("Login", self)
         self.login_Button.setProperty('class', 'settings_Buttons')
-        self.login_Button.move(165, 200)
         self.login_Button.clicked.connect(self.search_User)
 
 
     def login_interface_CheckBox(self):
-        self.hidden_Password = QCheckBox("Show Password", self)
+        self.hidden_Password = QCheckBox("Monstrar Senha", self)
         self.hidden_Password.toggled.connect(self.settings_hidden_CheckBox)
-        self.hidden_Password.move(20, 200)
 
 
     def settings_hidden_CheckBox(self, checked=None):
@@ -76,6 +72,26 @@ class Login(QWidget):
             self.login_Button.setEnabled(True)
         else:
             self.login_Button.setEnabled(False)
+
+#refatorar função
+    def layout_Widgets(self):
+        self.First_Horizontal_Layout_Box = QHBoxLayout()
+        self.Second_Horizontal_Layout_Box = QHBoxLayout()
+        self.Thirth_Horizontal_Layout_Box = QHBoxLayout()
+        self.Vertical_Box = QVBoxLayout()
+        self.First_Horizontal_Layout_Box.addWidget(self.user_Label)
+        self.First_Horizontal_Layout_Box.addWidget(self.user_Line)
+        self.Second_Horizontal_Layout_Box.addWidget(self.password_user_Label)
+        self.Second_Horizontal_Layout_Box.addWidget(self.password_user_Line)
+        self.Thirth_Horizontal_Layout_Box.addWidget(self.create_User_Label)
+        self.Vertical_Box.addLayout(self.First_Horizontal_Layout_Box)
+        self.Vertical_Box.addLayout(self.Second_Horizontal_Layout_Box)
+        self.Vertical_Box.addWidget(self.login_Button)
+        self.Vertical_Box.addWidget(self.hidden_Password)
+        self.Vertical_Box.addLayout(self.Thirth_Horizontal_Layout_Box)
+        self.Vertical_Box.addWidget(self.create_User_Button)
+        self.setLayout(self.Vertical_Box)
+
 
     def search_User(self):
         self.sql_cursor = QSqlQuery(self.base_Informations())
@@ -103,11 +119,9 @@ class Login(QWidget):
 
 
     def create_Account_Settings(self):
-        self.create_User_Label = QLabel("Don't have a account?", self)
-        self.create_User_Button = QPushButton('Create', self)
+        self.create_User_Label = QLabel("Não possui uma conta?", self)
+        self.create_User_Button = QPushButton('Novo Usuário', self)
         self.create_User_Button.setProperty('class', 'settings_Buttons')
-        self.create_User_Label.move(30, 280)
-        self.create_User_Button.move(165, 315)
         self.create_User_Button.clicked.connect(self.send_newWindow)
 
 
@@ -118,7 +132,7 @@ class Login(QWidget):
 
 
 
-
+# refatorar para uma script separado
 
 class Main_Window(QMainWindow):
     def __init__(self):
@@ -129,6 +143,9 @@ class Main_Window(QMainWindow):
         self.setGeometry(850, 850, 900, 900)
         self.setWindowTitle("Your finance")
         self.menu_Bar()
+        self.charts_test_PieCHart()
+        self.chart_teste_Bar()
+        self.layout_charts()
         self.show()
 
     def menu_Bar(self):
@@ -147,6 +164,59 @@ class Main_Window(QMainWindow):
         ajuda = main_Menu.addMenu('Ajuda')
         sair = main_Menu.addMenu("&Sair")
         sair.addAction(fechar_Programa)
+
+
+    def charts_test_PieCHart(self):
+        self.PieChart = QPieSeries()
+        self.PieChart.append("Renda", 1459.85)
+        self.PieChart.append("Gastos", 938.75)
+        self.PieChart.append("Investimentos", 455.63)
+
+        self.PieChart.setHoleSize(0.5)
+
+        self.chart = QChart()
+        self.chart.addSeries(self.PieChart)
+        self.chart.setTitle('Resumo Mensal')
+        self.chart.setMinimumSize(140, 140)
+        self.chart.setMaximumSize(330,  330)
+        self.chart.setAnimationOptions(QChart.AnimationOption.SeriesAnimations)
+        self.chart.setAnimationOptions(QChart.AnimationOption.AllAnimations)
+        self.chart.setAnimationOptions(QChart.AnimationOption.GridAxisAnimations)
+        self.viewer_Chart = QChartView(self.chart)  
+
+
+    def chart_teste_Bar(self):
+        self.Janeiro = QBarSet("Janeiro")
+        self.Fevereiro = QBarSet("Fevereiro")
+        self.Marco = QBarSet("Março")
+
+        self.Janeiro.append(328.78)
+        self.Fevereiro.append(442.99)
+        self.Marco.append(653.87)
+
+        self.Bar_chart = QBarSeries()
+        self.Bar_chart.append(self.Janeiro)
+        self.Bar_chart.append(self.Fevereiro)
+        self.Bar_chart.append(self.Marco)
+
+        self.Shape_Chart = QChart()
+        self.Shape_Chart.addSeries(self.Bar_chart)
+        self.Shape_Chart.setTitle("Crescimento Financeiro")
+        self.Shape_Chart.setMaximumSize(330, 330)
+
+        self.represent_chart = QChartView(self.Shape_Chart)
+
+    def layout_charts(self):
+        Main_Layout_Windown = QWidget()
+        self.setCentralWidget(Main_Layout_Windown)
+
+
+        self.charts_Layout = QHBoxLayout()
+        self.charts_Layout.addWidget(self.viewer_Chart)
+        self.charts_Layout.addWidget(self.represent_chart)
+        self.charts_Layout.setSpacing(1)
+        self.charts_Layout.setContentsMargins(4, 4, 4, 4)
+        Main_Layout_Windown.setLayout(self.charts_Layout)
 
 
 

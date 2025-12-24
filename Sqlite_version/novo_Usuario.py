@@ -1,22 +1,8 @@
 import sys
 
-from PyQt6.QtWidgets import QApplication, QDialog, QLabel, QLineEdit, QCheckBox, QPushButton, QMessageBox
+from PyQt6.QtWidgets import QApplication, QDialog, QLabel, QLineEdit, QCheckBox, QPushButton, QMessageBox, QVBoxLayout, QHBoxLayout
 from PyQt6.QtSql import QSqlDatabase, QSqlQuery
 
-
-style = """
-    .settings_Buttons{
-      background:#000;
-      color:#fff;
-      padding: 5px;
-      border-radius: 7px;
-    }
-    
-    .settings_Buttons:hover{
-      background: #7c7a7a;
-      color: #fff;
-    }
-"""
 
 class New_User(QDialog):
     def __init__(self):
@@ -28,9 +14,12 @@ class New_User(QDialog):
         self.setFixedSize(400, 400)
         self.setWindowTitle("Create account")
         self.create_user_Widgets()
-        self.create_user_Widgets_Position()
         self.create_user_Widgets_Settings()
         self.create_user_Buttons()
+        self.create_user_CheckBox()
+        self.settings_CheckBox()
+        self.settings_Button()
+        self.layout_Widget()
         self.show()
 
     def base_Informations(self):
@@ -42,39 +31,34 @@ class New_User(QDialog):
             print(f'O banco de dados não foi encontrado ! {self.database_Connection.lastError().text()}')
 
     def create_user_Widgets(self):
-        self.create_user_Label = QLabel("New User:", self)
+        self.create_user_Label = QLabel("Novo Usuário:", self)
         self.create_user_Line = QLineEdit(self)
-        self.create_user_password_Label = QLabel("Password:", self)
+        self.create_user_password_Label = QLabel("Senha:", self)
         self.create_user_password_Line = QLineEdit(self)
-        self.confirm_user_password_Label = QLabel("Confirm:", self)
+        self.confirm_user_password_Label = QLabel("Confirmar Senha:", self)
         self.confirm_user_password_Line = QLineEdit(self)
-
-    def create_user_Widgets_Position(self):
-        self.create_user_Label.move(55, 107)
-        self.create_user_Line.move(130, 103)
-        self.create_user_password_Label.move(55, 150)
-        self.create_user_password_Line.move(133, 147)
-        self.confirm_user_password_Label.move(70, 190)
-        self.confirm_user_password_Line.move(133, 185)
-
 
     def create_user_Widgets_Settings(self):
         self.create_user_Line.setClearButtonEnabled(True)
         self.create_user_password_Line.setClearButtonEnabled(True)
         self.confirm_user_password_Line.setClearButtonEnabled(True)
-        self.create_user_Line.setPlaceholderText("Insert email")
-        self.create_user_password_Line.setPlaceholderText("Insert password")
-        self.confirm_user_password_Line.setPlaceholderText("Confirm Password")
+        self.create_user_Line.setPlaceholderText("Inserir E-mail")
+        self.create_user_password_Line.setPlaceholderText("Inserir Senha")
+        self.confirm_user_password_Line.setPlaceholderText("Confirmar Senha")
+        self.create_user_Line.setProperty('class', 'place_holder')
+        self.create_user_Line.textEdited.connect(self.settings_Button)
+        self.create_user_password_Line.setProperty('class', 'place_holder')
+        self.confirm_user_password_Line.setProperty('class', 'place_holder')
 
     def create_user_Buttons(self):
-        self.create_user_Button = QPushButton("Create", self)
+        self.create_user_Button = QPushButton("Criar", self)
         self.create_user_Button.setProperty('class', 'settings_Buttons')
-        self.create_user_Button.move(165, 235)
+        self.create_user_Button.setEnabled(False)
         self.create_user_Button.clicked.connect(self.insert_New_User)
 
 
     def create_user_CheckBox(self):
-        self.hidden_user_Password = QCheckBox("Show Password", self)
+        self.hidden_user_Password = QCheckBox("Mostrar Senha", self)
         self.hidden_user_Password.toggled.connect(self.settings_CheckBox)
 
     def settings_CheckBox(self, checked=None):
@@ -91,6 +75,25 @@ class New_User(QDialog):
         else:
             self.create_user_Button.setEnabled(False)
 
+# Refatorar função
+    def layout_Widget(self):
+        self.layout_Horizontal_Box_Fist = QHBoxLayout()
+        self.layout_Horizontal_Box_Second = QHBoxLayout()
+        self.layout_Horizontal_Box_thirth = QHBoxLayout()
+        self.layout_Vertical_Box = QVBoxLayout()
+        self.layout_Horizontal_Box_Fist.addWidget(self.create_user_Label)
+        self.layout_Horizontal_Box_Fist.addWidget(self.create_user_Line)
+        self.layout_Horizontal_Box_Second.addWidget(self.create_user_password_Label)
+        self.layout_Horizontal_Box_Second.addWidget(self.create_user_password_Line)
+        self.layout_Horizontal_Box_thirth.addWidget(self.confirm_user_password_Label)
+        self.layout_Horizontal_Box_thirth.addWidget(self.confirm_user_password_Line)
+        self.layout_Vertical_Box.addLayout(self.layout_Horizontal_Box_Fist)
+        self.layout_Vertical_Box.addLayout(self.layout_Horizontal_Box_Second)
+        self.layout_Vertical_Box.addLayout(self.layout_Horizontal_Box_thirth)
+        self.layout_Vertical_Box.addWidget(self.create_user_Button)
+        self.layout_Vertical_Box.addWidget(self.hidden_user_Password)
+        self.setLayout(self.layout_Vertical_Box)
+
     def insert_New_User(self):
         self.sql_Cursor = QSqlQuery(self.base_Informations())
         add_NewUser = 'insert into customers_records(email_client, Password_client) values (?, ?)'
@@ -106,5 +109,4 @@ class New_User(QDialog):
                 self.close()
         elif self.create_user_password_Line.text() != self.confirm_user_password_Line.text():
             QMessageBox.information(self, 'Falha ao criar o usuário!', 'Ops... parece que as senhas não se coincidem!', QMessageBox.StandardButton.Ok)
-
 
