@@ -1,0 +1,35 @@
+QDialog QPushButton{
+	background:#000;
+        color:#fff;
+        border-radius:7px;
+	padding:3px;
+}
+
+QDialog QPushButton:hover{
+	background:#DBDBDB;
+	color:#fff;
+}
+
+
+QDialog QLineEdit{
+	border-radius:7px;
+	background:#DBDBDB;
+	color:#000;
+}
+
+
+.lateral_sidebar{
+	background:#000;
+	border-radius:7px;
+}
+
+
+.laretal_sidebar_buttons{
+	background:#000;
+	border-radius:7px;
+	padding:5px;
+}
+
+.laretal_sidebar_buttons:hover{
+	background:#DBDBDB;
+}
