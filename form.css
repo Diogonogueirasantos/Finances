@@ -18,18 +18,28 @@ QDialog QLineEdit{
 }
 
 
-.lateral_sidebar{
+.sidebar{
 	background:#000;
 	border-radius:7px;
 }
 
 
-.laretal_sidebar_buttons{
+.sidebar_buttons{
 	background:#000;
 	border-radius:7px;
 	padding:5px;
 }
 
-.laretal_sidebar_buttons:hover{
+.sidebar_buttons:hover{
 	background:#DBDBDB;
+}
+
+
+.money_display{
+	border-radius:7px;
+	background:#DBDBDB;
+}
+
+.identifier_money{
+        color:#fff;
 }

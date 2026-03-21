@@ -40,7 +40,6 @@ class Login(QDialog):
 
     def login_widgets_signals(self):
         self.user_login_line.textEdited.connect(self.block_login_button)
-        self.user_login_line.textEdited.connect(self.block_login_button)
         self.check_password.toggled.connect(self.show_password)
         self.create_newuser_button.clicked.connect(self.new_user)
 

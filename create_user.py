@@ -4,14 +4,15 @@ from PyQt6.QtGui import QPixmap
 class New_User(QDialog):
     def __init__(self):
         super().__init__()
-        self.InitializationUI()
+        self.initializationUI()
 
-    def InitializationUI(self):
+    def initializationUI(self):
         self.setFixedSize(350, 350)
         self.setWindowTitle('Novo Usuário')
         self.create_user_widgets()
         self.create_user_layout()
         self.create_user_widgets_settings()
+        self.create_user_widgets_signals()
         self.show()
 
 
@@ -32,10 +33,32 @@ class New_User(QDialog):
         self.create_user_line.setPlaceholderText('Nome do Usuário')
         self.create_password_line.setPlaceholderText('Insira sua senha')
         self.confirm_password_line.setPlaceholderText('Confirme a sua senha')
+        self.create_user_line.setClearButtonEnabled(True)
+        self.create_password_line.setEchoMode(QLineEdit.EchoMode.Password)
+        self.confirm_password_line.setEchoMode(QLineEdit.EchoMode.Password)
+        self.create_password_line.setClearButtonEnabled(True)
+        self.confirm_password_line.setClearButtonEnabled(True)
+
+        self.create_user_button.setEnabled(False)
 
     def create_user_widgets_signals(self):
-        pass
+        self.create_user_line.textEdited.connect(self.block_button_create)
+        self.check_password.toggled.connect(self.show_password)
 
+
+    def block_button_create(self):
+        if self.create_user_line.text() != "":
+            self.create_user_button.setEnabled(True)
+        else:
+            self.create_user_button.setEnabled(False)
+
+    def show_password(self, check=None):
+        if check:
+            self.create_password_line.setEchoMode(QLineEdit.EchoMode.Normal)
+            self.confirm_password_line.setEchoMode(QLineEdit.EchoMode.Normal)
+        else:
+            self.create_password_line.setEchoMode(QLineEdit.EchoMode.Password)
+            self.confirm_password_line.setEchoMode(QLineEdit.EchoMode.Password)
 
     def create_user_layout(self):
         self.user_name_layout = QHBoxLayout()
