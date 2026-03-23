@@ -5,6 +5,7 @@ from create_user import New_User
 class Login(QDialog):
     def __init__(self):
         super().__init__()
+        self.setModal(True)
         self.initialization()
 
 

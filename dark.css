@@ -1,0 +1,60 @@
+QMainWindow{
+  background:#D8D9D7;
+  color:#fff;
+}
+
+QDialog{
+  background:#D8D9D7;
+  color:#fff;
+}
+
+
+QDialog QPushButton{
+	background:#9FA4A6;
+        color:#000000;
+        border-radius:7px;
+	padding:3px;
+}
+
+QDialog QPushButton:hover{
+	background:#393D40;
+	color:#fff;
+}
+
+
+QDialog QLineEdit{
+	border-radius:7px;
+	background:#fff;
+	color:#000;
+}
+
+
+.sidebar{
+	background:#626B73;
+	border-radius:7px;
+}
+
+
+.sidebar_buttons{
+	background:#393D40;
+	border-radius:7px;
+	padding:5px;
+}
+
+.sidebar_buttons:hover{
+	background:#9FA4A6;
+}
+
+
+.money_display{
+	border-radius:7px;
+	background:#fff;
+	color:#000;
+	border:solid 2px #000;
+}
+
+.identifier_money{
+        color:#fff;
+}
+
+

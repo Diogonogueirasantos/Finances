@@ -4,6 +4,7 @@ from PyQt6.QtGui import QPixmap
 class New_User(QDialog):
     def __init__(self):
         super().__init__()
+        self.setModal(True)
         self.initializationUI()
 
     def initializationUI(self):
@@ -23,7 +24,7 @@ class New_User(QDialog):
         self.create_password_line = QLineEdit(self)
         self.confirm_password_label = QLabel(self)
         self.confirm_password_line = QLineEdit(self)
-        self.create_user_button = QPushButton('criar', self)
+        self.create_user_button = QPushButton('Criar', self)
         self.check_password = QCheckBox('Mostrar senha', self)
 
     def create_user_widgets_settings(self):
