@@ -5,38 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4d35fb-fd82-41d8-91ca-a532a33bd253" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cards.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/light.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/account_balance_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/account_circle_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/add_card_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/backup_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/calendar_add_on_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/calendar_month_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/credit_card_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/delete_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/finance_mode_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/icons8-visa-73.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/key_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/lock_reset_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/ma_symbol_opt_73_3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/paid_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/receipt_long_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/savings_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursos/imagens/wallet_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards.py" beforeDir="false" afterPath="$PROJECT_DIR$/cards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/light.css" beforeDir="false" afterPath="$PROJECT_DIR$/light.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/credit_card_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/finance_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/money_bag_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/payments_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/receipt_long_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/savings_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/recursos/imagens/wallet_26dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recursos/imagens/calendar_add_on_32dp_FFFFFF_FILL0_wght400_GRAD0_opsz40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/renda.py" beforeDir="false" afterPath="$PROJECT_DIR$/renda.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +126,22 @@
       <workItem from="1774122420595" duration="928000" />
       <workItem from="1774137088383" duration="1261000" />
       <workItem from="1774177382999" duration="14963000" />
-      <workItem from="1774210312152" duration="11985000" />
+      <workItem from="1774210312152" duration="13246000" />
+      <workItem from="1774253411391" duration="407000" />
+      <workItem from="1774259564099" duration="111000" />
+      <workItem from="1774283641470" duration="773000" />
+      <workItem from="1774295530156" duration="1049000" />
+      <workItem from="1774301550416" duration="3445000" />
+      <workItem from="1774312316568" duration="1385000" />
+      <workItem from="1774353539314" duration="8081000" />
+      <workItem from="1774363082341" duration="2846000" />
+      <workItem from="1774392567952" duration="141000" />
+      <workItem from="1774392850736" duration="784000" />
+      <workItem from="1774397071408" duration="1857000" />
+      <workItem from="1774434642007" duration="6214000" />
+      <workItem from="1774469916621" duration="70000" />
+      <workItem from="1774541507431" duration="191000" />
+      <workItem from="1774565469881" duration="301000" />
     </task>
     <servers />
   </component>
@@ -159,6 +149,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Finances$main_window.coverage" NAME="main_window Coverage Results" MODIFIED="1774224907391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Finances$main_window.coverage" NAME="main_window Coverage Results" MODIFIED="1774565504386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

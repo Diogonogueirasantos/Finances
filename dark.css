@@ -31,12 +31,14 @@ QDialog QLineEdit{
 
 .sidebar{
 	background:#626B73;
+	color:#fff;
 	border-radius:7px;
 }
 
 
 .sidebar_buttons{
 	background:#393D40;
+	color:#fff;
 	border-radius:7px;
 	padding:5px;
 }
@@ -57,4 +59,19 @@ QDialog QLineEdit{
         color:#fff;
 }
 
+.pie_style{
+  background:#D8D9D7;
+  border-radius:7px;
+}
 
+.bar_style{
+  background:#D8D9D7;
+  border-radius:7px;
+  
+}
+
+.cards_contain{
+  background:#fff;
+  color:#000;
+  border-radius:7px;
+}

@@ -13,14 +13,14 @@ QDialog{
 
 
 QDialog QPushButton{
-	background:#265FC2;
+	background:#000000;
         color:#F2EDEC;
         border-radius:7px;
 	padding:3px;
 }
 
 QDialog QPushButton:hover{
-	background:#150DA8;
+	background:#212121;
 	color:#F2EDEC;
 }
 
@@ -33,20 +33,21 @@ QDialog QLineEdit{
 
 
 .sidebar{
-	background:#0442BF;
+	background:#000000;
 	color:#fff;
 	border-radius:7px;
 }
 
 
 .sidebar_buttons{
-	background:#265FC2;
+	background:#000000;
 	border-radius:7px;
 	padding:5px;
 }
 
+
 .sidebar_buttons:hover{
-	background:#150DA8;
+	background:#212121;
 }
 
 
@@ -60,5 +61,19 @@ QDialog QLineEdit{
         color:#fff;
 }
 
+.pie_style{
+  background:#fff;
+  border-radius:7px;
+}
+
+.bar_style{
+  background:#fff;
+  border-radius:7px;
+}
 
 
+.cards_contain{
+  background:#fff;
+  color:#000;
+  border-radius:7px;
+}
