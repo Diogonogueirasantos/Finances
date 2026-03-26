@@ -1,5 +1,5 @@
 # Sobre o projeto
-![App_gif](https://github.com/Diogonogueirasantos/Finances/blob/main/recursos/gif_for_python_dev.gif)
+![gif](https://github.com/Diogonogueirasantos/Finances/blob/main/recursos/post/your_finance.gif)
 
 Bom a ideia por trás desse projeto surgiu pelo simples desejo de aplicar todo conhecimento que venho adquirindo sobre python e criações de interfaces gráficas, em um projeto real, apesar de ter a análise de dados como foco principal, não acho que seja de todo mal aprender sobre engenharia de software. Certo este projeto nada mais é que um programa de auxilio financeiro, sim, muito semelhante com as planilhas que costumamos usar para controlar nossas finanças, porém mais interativa (pelo menos é o que acredito ser). 
 
